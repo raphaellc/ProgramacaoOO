@@ -1,6 +1,6 @@
-#ifndef CARRINHOCOMPRA_H
-#define CARRINHOCOMPRA_H
 #include "CarrinhoCompras.h"
+#include <iostream>
+using namespace std;
 
 CarrinhoCompras::CarrinhoCompras(){
     this->itens = new vector<Item *>();
@@ -10,4 +10,10 @@ CarrinhoCompras::CarrinhoCompras(){
 void CarrinhoCompras::adicionarItemCarrinho(Item *_item){
     this->itens->push_back(_item);
 }
-#endif // CARRINHOCOMPRA_H
+
+void CarrinhoCompras::listarItens(){
+    for(int i = 0; i < this->itens->size(); i++){
+        cout << this->itens->at(i)->getProduto()->getNome() << endl;  
+    }
+
+}

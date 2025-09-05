@@ -1,3 +1,5 @@
+#ifndef PRODUTO_H
+#define PRODUTO_H
 #include <string>
 class Produto{
     private:
@@ -11,3 +13,4 @@ class Produto{
         void setNome(std::string _nome);
         void setPreco(double _preco);
 };
+#endif

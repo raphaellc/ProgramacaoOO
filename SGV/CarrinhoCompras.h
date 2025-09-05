@@ -1,3 +1,5 @@
+#ifndef CARRINHOCOMPRA_H
+#define CARRINHOCOMPRA_H
 #include <vector>
 #include "Item.h"
 using namespace std;
@@ -8,4 +10,6 @@ class CarrinhoCompras{
     public:
         CarrinhoCompras();
         void adicionarItemCarrinho(Item * _item);
+        void listarItens();
 };
+#endif // CARRINHOCOMPRA_H

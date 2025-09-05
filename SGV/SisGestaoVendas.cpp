@@ -1,5 +1,3 @@
-#ifndef SISGESTAOVENDAS_H
-#define SISGESTAOVENDAS_H
 #include "SisGestaoVendas.h"
 SisGestaoVendas::SisGestaoVendas(Cliente * _cliente){
     this->cliente = _cliente;
@@ -14,4 +12,6 @@ void SisGestaoVendas::adicionarProdutoCarrinho(Produto * _produto){
     this->carrinho->adicionarItemCarrinho(item);
 }
 
-#endif
+void SisGestaoVendas::listarProdutosCarrinho(){
+    this->carrinho->listarItens();
+}

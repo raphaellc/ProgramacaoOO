@@ -1,5 +1,3 @@
-#ifndef PRODUTO_H
-#define PRODUTO_H
 #include "Produto.h"
 Produto::Produto(std::string _nome, double _preco){
     this->nome = _nome;
@@ -21,7 +19,3 @@ void Produto::setNome(std::string _nome){
 void Produto::setPreco(double _preco){
     this->preco = _preco;
 }
-
-#endif
-
-

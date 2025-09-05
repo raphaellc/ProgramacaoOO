@@ -8,5 +8,4 @@ class Cliente{
         Cliente();
         Cliente(std::string nome, std::string end, std::string email);
  
-
 };

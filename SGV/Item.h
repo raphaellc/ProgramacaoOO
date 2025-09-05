@@ -1,3 +1,5 @@
+#ifndef ITEM_H
+#define ITEM_H
 #include "Produto.h"
 class Item{
     private:
@@ -6,4 +8,7 @@ class Item{
     public:
         Item();
         Item(Produto * _produto, int _quantidade);
+        Produto * getProduto();
 };
+
+#endif
