@@ -22,3 +22,7 @@ void Personagem::exibirInfo() const {
               << "Forca: " << this->forca << " | Inteligencia: " << this->inteligencia << " | Agilidade: " << this->agilidade << "\n"
               << "-----------------------------------\n";
 }
+
+int Personagem::obterAgilidade() const {
+    return this->agilidade;
+}

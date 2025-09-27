@@ -14,6 +14,8 @@ class Personagem{
         int inteligencia;
 
     public:
+        Personagem();
+        virtual ~Personagem();
         Personagem(int vida, int mana, string raca, string classe, int forca, int agilidade, int inteligencia);
 };
 #endif

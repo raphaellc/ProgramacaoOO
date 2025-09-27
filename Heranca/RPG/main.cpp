@@ -18,6 +18,7 @@ int main() {
 
     // Criação dos personagens usando polimorfismo.
     // Ponteiros da classe base apontam para objetos da classe derivada.
+    
     Personagem* jogador1 = new Guerreiro("Grommash");
     Personagem* jogador2 = new Mago("Alandra");
     // Personagem* jogador2 = new Ladino("Valira"); // Você pode trocar os oponentes
@@ -33,20 +34,33 @@ int main() {
     // O combate continua enquanto ambos os jogadores estiverem vivos
     while (jogador1->estaVivo() && jogador2->estaVivo()) {
         std::cout << "\n----- TURNO " << turno << " -----\n";
+        if (jogador1->obterAgilidade() > jogador2->obterAgilidade()){
+            // Jogador 1 ataca o Jogador 2
+            jogador1->atacar(*jogador2);
+            std::this_thread::sleep_for(std::chrono::seconds(1));
 
-        // Jogador 1 ataca o Jogador 2
-        jogador1->atacar(*jogador2);
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+            // Verifica se o jogador 2 sobreviveu antes de contra-atacar
+            if (!jogador2->estaVivo()) {
+                break;
+            }
 
-        // Verifica se o jogador 2 sobreviveu antes de contra-atacar
-        if (!jogador2->estaVivo()) {
-            break;
+            // Jogador 2 ataca o Jogador 1
+            jogador2->atacar(*jogador1);
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+        }else {
+            // Jogador 2 ataca o Jogador 1
+            jogador2->atacar(*jogador1);
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            // Verifica se o jogador 2 sobreviveu antes de contra-atacar
+            if (!jogador1->estaVivo()) {
+                break;
+            }
+            // Jogador 1 ataca o Jogador 2
+            jogador1->atacar(*jogador2);
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+
         }
 
-        // Jogador 2 ataca o Jogador 1
-        jogador2->atacar(*jogador1);
-        std::this_thread::sleep_for(std::chrono::seconds(2));
-        
         turno++;
     }
 

@@ -29,6 +29,7 @@ public:
     void receberDano(int dano);
     bool estaVivo() const;
     void exibirInfo() const;
+    int obterAgilidade() const;
 };
 
 #endif // PERSONAGEM_H
