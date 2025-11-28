@@ -6,6 +6,7 @@ struct ClienteVO { std::string nome; };
 class ClienteDAO {
 public:
     static ClienteDAO* getInstance() {
+        
         static ClienteDAO instance;
         return &instance;
     }
